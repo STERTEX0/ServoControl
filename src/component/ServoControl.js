@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useWebSocket } from "../context/WebSocketContext";
 import "./ServoControl.css";
 
-const ServoControl = ({ onRefresh }) => {
+const ServoControl = () => {
   const { ws } = useWebSocket();
   const [intervalId, setIntervalId] = useState(null);
 
@@ -56,6 +56,20 @@ const ServoControl = ({ onRefresh }) => {
             onClick={() => sendCommand("down")}
           >
             ↓
+          </button>
+        </div>
+        <div className="extreme-buttons">
+          <button
+            className="btn btn-primary"
+            onClick={() => sendCommand("upmax")}
+          >
+            เงย
+          </button>
+          <button
+            className="btn btn-primary"
+            onClick={() => sendCommand("downmax")}
+          >
+            ก้ม
           </button>
         </div>
       </div>
